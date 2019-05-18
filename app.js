@@ -36,11 +36,9 @@ app.use((req, res, next) => {
 
 // 設定路由
 // 使用路由器
+app.use('/', require('./routes/home'))
 app.use('/users', require('./routes/user'))
-// 首頁
-app.get('/', (req, res) => {
-  res.send('hello world')
-})
+app.use('/todos', require('./routes/todo'))
 
 // 設定 express port 3000
 app.listen(port, () => {
